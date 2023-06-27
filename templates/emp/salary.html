@@ -1,0 +1,41 @@
+{% include 'emp/navbar.html' %}
+                 <div class="container">
+                   <div class="row">
+                     <div class="col-md-12">
+                       <div class="">
+                         <div class="card-body">
+                           <table class="table">
+                          <h1 style=" font: 3em Nasalization">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Salary Table</h1>
+                          <h5 style="align-text-centre">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                             <thead>
+                               <tr>
+                                   <th style="font: 1em Nasalization; color:white">S.NO.</th>
+                                   <th style="font: 1em Nasalization; color:white">salary_id</th>
+                                 <th style="font: 1em Nasalization; color:white">emp_id</th>
+                                 <th style="font: 1em Nasalization; color:white">annual_package</th>
+                                 <th style="font: 1em Nasalization; color:white">payment_status</th>
+                                   <th style="font: 1em Nasalization; color:white">annual_increment</th>
+                               </tr>
+                             </thead>
+                             <tbody>
+                               {% for e in emps %}
+                               <tr>
+                                 <td style=" color:white">{{forloop.counter}}</td>
+                                 <td style=" color:white">{{e.salary_id}}</td>
+                                 <td style=" color:white">{{e.emp_id}}</td>
+                                 <td style=" color:white">{{e.annual_package}}</td>
+                                 <td style=" color:white">{{e.payment_status}}</td>
+                                 <td style=" color:white">{{e.annual_increment}}</td>
+             
+                               </tr>
+                               {%endfor%}
+                             </tbody>
+                           </table>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+            </div>
+          </div>
+          

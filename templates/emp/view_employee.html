@@ -1,0 +1,64 @@
+{% include 'emp/navbar.html' %}
+              <div class="panel">
+                <div class="row-md-12">
+                  <div class="col">
+                    <div class="card">
+    
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="container">
+                <div class="row-md-12">
+                  <div class="col-md-12">
+                    <div class="-mb-12">
+                      <div class="card-body">
+                        <table class="table">
+                          
+                          
+                          <h1 style="font:3em Nasalization">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Employee Table</h1>
+                          <h5 style="align-text-centre">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                          <thead>
+                            <tr>
+    
+                            </tr>
+                          </thead>
+                          <thead>
+                            <tr>
+                              <th style="font: 1em Nasalization; color:white">S.NO.</th>
+                              <th style="font: 1em Nasalization; color:white">NAME</th>
+                              <th style="font: 1em Nasalization; color:white">ID</th>
+                              <th style="font: 1em Nasalization; color:white ">PHONE</th>
+                              <th style="font: 1em Nasalization; color:white">DEPARTMENT</th>
+                              <th style="font: 1em Nasalization; color:white">ADDRESS</th>
+                              <th style="font: 1em Nasalization; color:white">ACTION</th>
+    
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for e in emps %}
+                            <tr>
+                              <td style=" color:white">{{forloop.counter}}</td>
+                              <td style=" color:white">{{e.name}}</td>
+                              <td style=" color:white">{{e.emp_id}}</td>
+                              <td style=" color:white">{{e.phone}}</td>
+                             
+                              <td style=" color:white">{{e.department}}</td>
+                              <td style=" color:white">{{e.address}}</td>
+                              <td>
+                                <a href="/emp/delete-emp/{{e.id}}" class="btn btn-danger btn-sm">Delete</a>
+                                <a href="/emp/update-emp/{{e.id}}" class="btn btn-dark btn-sm">Update</a>
+                              </td>
+                            </tr>
+                            {%endfor%}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+    
+                </div>
+              </div>
+              <!-- partial:../../partials/_footer.html -->
+    
+            

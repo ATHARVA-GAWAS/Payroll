@@ -1,0 +1,74 @@
+{% include 'emp/navbar.html' %}
+        <div class="container">
+            <div class="row">
+              <div class="col-md-6 offset-md-3">
+                <div class=" text-white">
+                  <div class="card-body">
+                    <form action="/emp/add-emp/" method="POST">
+                      <h5 style="align-text-centre">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                          <h5 style="align-text-centre">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                          <h5 style="align-text-centre">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                          <h1 style=" font: 3em Nasalization">&nbsp;&nbsp;&nbsp;&nbsp;Add Employee</h1>
+                          <h5 style="align-text-centre">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                      {% csrf_token %}
+                      <div class="mb-3">
+                        <label for="name" style="font: 1em Nasalization; color:white">Employee Name</label>
+                        <input
+                          id="name"
+                          type="text"
+                          class="form-control"
+                          placeholder="Enter Employee Name"
+                          name="emp_name"
+                        />
+                      </div>
+      
+                      <div class="mb-3">
+                        <label for="id" style="font: 1em Nasalization; color:white">Employee ID</label>
+                        <input
+                          id="id"
+                          type="text"
+                          class="form-control"
+                          placeholder="Enter Employee ID"
+                          name="emp_id"
+                        />
+                      </div>
+      
+                      <div class="mb-3">
+                        <label for="phone" style="font: 1em Nasalization; color:white">Phone</label>
+                        <input
+                          id="phone"
+                          type="text"
+                          class="form-control"
+                          placeholder="Enter Employee Phone"
+                          name="emp_phone"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="address" style="font: 1em Nasalization; color:white">Employee Address</label>
+                        <textarea
+                          name="emp_address"
+                          id="address"
+                          rows="5"
+                          class="form-control"
+                        ></textarea>
+                      </div>
+                      <div class="mb-3 ">
+                        <label for="department" style="font: 1em Nasalization; color:white">Departments</label>
+                        <select name="emp_department" id="department" class="form-control">
+                            <option value="CSE">Computer Science</option>
+                            <option value="ME">Mechanical Engg</option>
+                            <option value="EE">Electrical Engg</option>
+                        </select>
+                      </div>
+                      <div class="container text-center">
+                          <button class="btn" style="background-color: #00ABB3;">
+                              Add Employee
+                          </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    

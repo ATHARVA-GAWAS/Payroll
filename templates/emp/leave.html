@@ -1,0 +1,49 @@
+{% include 'emp/navbar.html' %}
+        <!-- partial -->
+          <div class="panel">
+            <div class="row-md-12">
+              <div class="col">
+                <div class="card">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+      
+              <table class="table">
+                <h1 style="font:3em Nasalization">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Leave Table</h1>
+                <h5 style="align-text-centre">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                <thead>
+                  <tr>
+                      <th style="font: 1em Nasalization; color:white">S.NO.</th>
+                      <th style="font: 1em Nasalization; color:white">leave ID</th>
+                    <th style="font: 1em Nasalization; color:white">Employee ID</th>
+                    <th style="font: 1em Nasalization; color:white">Start Date</th>
+                    <th style="font: 1em Nasalization; color:white">End Date</th>
+                      <th style="font: 1em Nasalization; color:white">Leave Info</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for e in emps %}
+                  <tr>
+                    <td style=" color:white">{{forloop.counter}}</td>
+                    <td style=" color:white">{{e.leave_id}}</td>
+                    <td style=" color:white">{{e.emp_id}}</td>
+                    <td style=" color:white">{{e.start_date}}</td>
+                    <td style=" color:white">{{e.end_date}}</td>
+                    <td style=" color:white">{{e.reason}}</td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+          

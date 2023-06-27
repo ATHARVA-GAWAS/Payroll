@@ -1,0 +1,83 @@
+{% include 'emp/navbar.html' %}
+
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <div class="text-white">
+              <div class="card-body">
+                <form action="/emp/add-job/" method="POST">
+                  <h5 style="align-text-centre">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                  <h5 style="align-text-centre">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                  <h5 style="align-text-centre">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                  <h1 style=" font: 3em Nasalization">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Job</h1>
+                  <h5 style="align-text-centre">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                  {% csrf_token %}
+                  <div class="mb-3">
+                    <label for="name"  style="font: 1em Nasalization; color:white">Job Name</label>
+                    <input
+                      id="name"
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter Job Name"
+                      name="name"
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="id"  style="font: 1em Nasalization; color:white">Job ID</label>
+                    <input
+                      id="job_ID"
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter Job ID"
+                      name="job_ID"
+                    />
+                  </div>
+
+
+
+                  <div class="mb-3">
+                  <label for="description" style="font: 1em Nasalization; color:white">Description</label>
+                  <input
+                    id="description"
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter description"
+                    name="description"
+                    value="{{job.description}}"
+                  />
+                </div>
+                     <div class="mb-3">
+                  <label for="id" style="font: 1em Nasalization; color:white">salary range</label>
+                  <input
+                    id="salary_range"
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter salary range"
+                    name="salary_range"
+                    value="{{job.salary_range}}"
+                  />
+                </div>
+                  <div class="mb-3">
+                  <label for="id" style="font: 1em Nasalization; color:white">department head</label>
+                  <input
+                    id="dept_head"
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter department head"
+                    name="dept_head"
+                    value="{{job.dept_head}}"
+                  />
+                </div>
+                  <div class="container text-center">
+                      <button class="btn" style="background-color: #00ABB3;">
+                          Add Job
+                      </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
