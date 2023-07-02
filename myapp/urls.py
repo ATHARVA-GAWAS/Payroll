@@ -23,5 +23,6 @@ urlpatterns = [
     path("index/",fun.emp_home),
     path("about/",about),
     path("services/",services),
+    path('export_data_to_excel/', fun.export_data_to_excel),
     path("emp/",include('emp.urls'))
 ]

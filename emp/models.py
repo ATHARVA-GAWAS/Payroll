@@ -10,7 +10,7 @@ class Emp(models.Model):
     address=models.CharField(max_length=150)
     working=models.BooleanField(default=True)
     department=models.CharField(max_length=200)
-    
+
     def __str__(self):
         return self.name
 
@@ -22,8 +22,7 @@ class Job(models.Model):
         dept_head = models.CharField(max_length=150)
 
 
-        def __str__(self):
-            return self.name
+
 
 
 class Project(models.Model):
@@ -63,4 +62,7 @@ class Login(models.Model):
 
     def __str__(self):
         return self.emp_id
-    
+
+class ExcelFile(models.Model):
+      file=models.FileField(upload_to="excel")
+

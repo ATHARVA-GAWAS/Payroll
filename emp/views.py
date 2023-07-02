@@ -1,6 +1,12 @@
 from django.shortcuts import redirect, render,get_object_or_404
 from django.http import HttpResponse
 from .models import *
+from django.http import JsonResponse
+import pandas as pd
+from django.conf import settings
+import uuid
+
+from .serializers import JobSerializer
 
 
 def emp_home(request):
@@ -189,3 +195,31 @@ def some_view(request):
     c = {"data": csv_data}
     response.write(t.render(c))
     return response
+
+
+
+
+
+
+def export_data_to_excel(request):
+    objs=Job.objects.all()
+    serializer=JobSerializer(objs,many=True)
+    data=pd.DataFrame(serializer.data)
+    print(data)
+
+
+    data.to_excel('output.xlsx')
+    return JsonResponse({ 'status':200})
+
+def import_data_to_db(request):
+    if request.method=='POST':
+        file=request.FILES['files']
+        obj=ExcelFile.objects.create(file=file)
+        path = str(obj.file)
+        print(f'{settings.BASE_DIR}/{path}')
+        df=pd.read_excel(path)
+        for d in df.values:
+              print(df)
+
+
+    return render(request,'emp/excel.html')

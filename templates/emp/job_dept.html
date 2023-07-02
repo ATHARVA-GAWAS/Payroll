@@ -30,8 +30,11 @@
     
                         </tr>
                       </thead>
+                    <a href="/emp/export_data_to_excel/{{e.id}}" class="btn btn-dark btn-sm">Export to excel</a>
+                    <!--<a href="/emp/import_data_to_db/{{e.id}}" class="btn btn-dark btn-sm">Import excel</a>//-->
                       <tbody>
                         {% for e in emps %}
+
                         <tr>
                           <td style=" color:white">{{forloop.counter}}</td>
                           <td style=" color:white">{{e.job_ID}}</td>
@@ -42,6 +45,7 @@
                           <td>
                            <a href="/emp/delete-job/{{e.id}}" class="btn btn-danger btn-sm">Delete</a>
                            <a href="/emp/update-job/{{e.id}}" class="btn btn-dark btn-sm">Update</a>
+
                           </td>
                         </tr>
                         {%endfor%}
