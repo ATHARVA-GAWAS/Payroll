@@ -6,7 +6,7 @@ import pandas as pd
 from django.conf import settings
 import uuid
 
-from .serializers import JobSerializer
+from .serializers import *
 
 
 def emp_home(request):
@@ -223,3 +223,12 @@ def import_data_to_db(request):
 
 
     return render(request,'emp/excel.html')
+def export_salary_data_to_excel(request):
+    objs=Salary.objects.all()
+    serializer=SalarySerializer(objs,many=True)
+    data=pd.DataFrame(serializer.data)
+    print(data)
+
+
+    data.to_excel('salary_output.xlsx')
+    return JsonResponse({ 'status':200})

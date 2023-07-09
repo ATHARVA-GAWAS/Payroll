@@ -52,8 +52,7 @@ class Salary(models.Model):
     payment_status = models.CharField(max_length=200)
     annual_increment = models.CharField(max_length=200)
 
-    def __str__(self):
-        return self.salary_id
+
     
 class Login(models.Model):
     email_id= models.EmailField(max_length=200)
