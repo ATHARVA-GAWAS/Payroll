@@ -11,8 +11,7 @@ class Emp(models.Model):
     working=models.BooleanField(default=True)
     department=models.CharField(max_length=200)
 
-    def __str__(self):
-        return self.name
+
 
 class Job(models.Model):
         name = models.CharField(max_length=200)
@@ -31,9 +30,7 @@ class Project(models.Model):
     description = models.CharField(max_length=150)
     project_status = models.CharField(max_length=200)
 
-    def __str__(self):
-        return self.name
-    
+
 class Leave(models.Model):
     leave_id = models.CharField(max_length=200)
     emp_id = models.CharField(max_length=200)
@@ -41,8 +38,7 @@ class Leave(models.Model):
     end_date = models.DateField(max_length=200)
     reason = models.CharField(max_length=200)
 
-    def __str__(self):
-        return self.leave_id
+
 
 
 class Salary(models.Model):

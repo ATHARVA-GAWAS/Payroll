@@ -232,3 +232,30 @@ def export_salary_data_to_excel(request):
 
     data.to_excel('salary_output.xlsx')
     return JsonResponse({ 'status':200})
+def export_project_data_to_excel(request):
+    objs=Project.objects.all()
+    serializer=ProjectSerializer(objs,many=True)
+    data=pd.DataFrame(serializer.data)
+    print(data)
+
+
+    data.to_excel('project_output.xlsx')
+    return JsonResponse({ 'status':200})
+def export_leave_data_to_excel(request):
+    objs=Leave.objects.all()
+    serializer=LeaveSerializer(objs,many=True)
+    data=pd.DataFrame(serializer.data)
+    print(data)
+
+
+    data.to_excel('leave_output.xlsx')
+    return JsonResponse({ 'status':200})
+def export_emp_data_to_excel(request):
+    objs=Emp.objects.all()
+    serializer=EmpSerializer(objs,many=True)
+    data=pd.DataFrame(serializer.data)
+    print(data)
+
+
+    data.to_excel('emp_output.xlsx')
+    return JsonResponse({ 'status':200})
